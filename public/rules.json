@@ -1,0 +1,77 @@
+{
+  "_comment": "Compliance rules for Sobre 4Ps tracker. Edit this file when DSWD guidelines change (Req 6.3).",
+  "_version": "1.0.0",
+  "rules": [
+    {
+      "id": "fds_monthly",
+      "label": "Pulong ng Pamilya (FDS)",
+      "description": "Ang grantee ay dapat dumalo sa buwanang Family Development Session.",
+      "appliesTo": {
+        "roles": ["grantee"]
+      },
+      "condition": {
+        "kind": "fds",
+        "frequencyDays": 30,
+        "graceDays": 7
+      }
+    },
+    {
+      "id": "child_school_attendance",
+      "label": "Pagpasok sa Paaralan",
+      "description": "Ang batang nag-aaral (3–18 taong gulang) ay dapat may attendance na hindi bababa sa 85% bawat buwan.",
+      "appliesTo": {
+        "roles": ["child"],
+        "ageMin": 3,
+        "ageMax": 18
+      },
+      "condition": {
+        "kind": "checkup",
+        "frequencyDays": 30,
+        "graceDays": 7
+      }
+    },
+    {
+      "id": "child_preventive_checkup",
+      "label": "Regular na Check-up / Bakuna",
+      "description": "Ang batang 0–5 taong gulang ay dapat may regular na preventive check-up at immunization.",
+      "appliesTo": {
+        "roles": ["child"],
+        "ageMin": 0,
+        "ageMax": 5
+      },
+      "condition": {
+        "kind": "checkup",
+        "frequencyDays": 60,
+        "graceDays": 7
+      }
+    },
+    {
+      "id": "child_deworming",
+      "label": "Pag-inom ng Gamot sa Bulate (Deworming)",
+      "description": "Ang batang pang-eskwela ay dapat magpa-deworm nang dalawang beses sa isang taon.",
+      "appliesTo": {
+        "roles": ["child"],
+        "ageMin": 1,
+        "ageMax": 18
+      },
+      "condition": {
+        "kind": "deworming",
+        "frequencyDays": 180,
+        "graceDays": 14
+      }
+    },
+    {
+      "id": "pregnant_prenatal",
+      "label": "Prenatal / Postnatal Check-up",
+      "description": "Ang buntis o bagong panganak ay dapat may regular na prenatal at postnatal check-up.",
+      "appliesTo": {
+        "roles": ["pregnant"]
+      },
+      "condition": {
+        "kind": "prenatal",
+        "frequencyDays": 30,
+        "graceDays": 7
+      }
+    }
+  ]
+}
